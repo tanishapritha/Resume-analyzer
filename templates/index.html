@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Analyzer</h1>
+        <p>Upload your resume and a job description to get personalized feedback!</p>
+
+        <form action="/analyze" method="POST" enctype="multipart/form-data" id="uploadForm">
+            <div class="form-group">
+                <label for="resume">Resume (PDF/DOCX):</label>
+                <input type="file" name="resume" id="resume" required>
+            </div>
+
+            <div class="form-group">
+                <label for="job_description">Job Description:</label>
+                <textarea name="job_description" id="job_description" rows="5" required placeholder="Enter the job description here..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Analyze</button>
+        </form>
+    </div>
+
+    <script>
+        // Simple validation before form submission
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            const resumeFile = document.getElementById('resume').files[0];
+            if (resumeFile && (resumeFile.type !== 'application/pdf' && !resumeFile.name.endsWith('.docx'))) {
+                alert("Please upload a valid PDF or DOCX file.");
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

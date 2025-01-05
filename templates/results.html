@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Results</h1>
+
+        <div class="result">
+            <h2>Resume Summary</h2>
+            <p><strong>Name:</strong> {{ name }}</p>
+        </div>
+
+        <div class="result">
+            <h2>Job Match Score</h2>
+            <p>Your resume matches the job description <strong>{{ match_score }}%</strong>.</p>
+        </div>
+
+        <div class="result">
+            <h2>Missing Skills</h2>
+            {% if missing_skills %}
+                <ul>
+                    {% for skill in missing_skills %}
+                        <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No skills missing! Great job!</p>
+            {% endif %}
+        </div>
+
+        <div class="button-container">
+            <a href="/" class="btn-back">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>

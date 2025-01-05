@@ -1,0 +1,7 @@
+flask
+spacy
+pdfplumber
+python-docx
+sentence-transformers
+scikit-learn
+pandas
