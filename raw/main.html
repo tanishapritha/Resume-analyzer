@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Analysis Results</h1>
+    </header>
+    <section class="results-section">
+      <h2>High Matches</h2>
+      {% for result in results.high %}
+      <div class="result">
+        <p><strong>File:</strong> {{ result.filename }}</p>
+        <p><strong>Matching Percentage:</strong> {{ result.matching_percentage }}%</p>
+        <p><strong>Message:</strong> {{ result.message }}</p>
+      </div>
+      <hr>
+      {% endfor %}
+
+      <h2>Medium Matches</h2>
+      {% for result in results.medium %}
+      <div class="result">
+        <p><strong>File:</strong> {{ result.filename }}</p>
+        <p><strong>Matching Percentage:</strong> {{ result.matching_percentage }}%</p>
+        <p><strong>Message:</strong> {{ result.message }}</p>
+      </div>
+      <hr>
+      {% endfor %}
+
+      <h2>Low Matches</h2>
+      {% for result in results.low %}
+      <div class="result">
+        <p><strong>File:</trong> {{ result.filename }}</p>
+        <p><strong>Matching Percentage:</strong> {{ result.matching_percentage }}%</p>
+        <p><strong>Message:</strong> {{ result.message }}</p>
+      </div>
+      <hr>
+      {% endfor %}
+    </section>
+    <footer>
+      <p>&copy; 2025 Resume Analyzer. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

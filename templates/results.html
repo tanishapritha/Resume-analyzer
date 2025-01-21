@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="container">
+    <div class="container-id">
         <h1>Analysis Results</h1>
 
         <div class="result">
@@ -21,7 +21,7 @@
         </div>
 
         <div class="result">
-            <h2>Missing Skills</h2>
+            <h2>Skills</h2>
             {% if missing_skills %}
                 <ul>
                     {% for skill in missing_skills %}
