@@ -16,3 +16,4 @@ plotly
 pafy
 streamlit-tags
 pymysql
+mysql-connector-python
