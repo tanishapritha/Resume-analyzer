@@ -5,3 +5,14 @@ python-docx
 sentence-transformers
 scikit-learn
 pandas
+numpy
+streamlit
+pandas
+pyresparser
+pdfminer3
+nltk
+spacy
+plotly
+pafy
+streamlit-tags
+pymysql
